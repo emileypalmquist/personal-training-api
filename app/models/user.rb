@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  has_many :appointments
+  has_many :appointments, dependent: :destroy
   has_many :availabilities, through: :appointments
-  # has_many :workouts
+  has_many :workouts, dependent: :destroy
 
   has_one_attached :profile_photo
 
